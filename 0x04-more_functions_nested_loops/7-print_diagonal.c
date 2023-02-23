@@ -1,40 +1,27 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
- * print_diagonal - function declaration
- * Description: print a diagonal line
- * @n: number of parts
- * Return: void
- */
-
-void print_diagonal(int n);
-
-/**
- * print_diagonal - function definition
- * Description: print a slash n times
- * @n: number of slashes
- * Return: void
+ * print_diagonal - Draws a diagonal line using the \ character.
+ * @n: The number of \ characters to be printed.
  */
 
 void print_diagonal(int n)
 {
-	int slash;
-	int space;
-
-	if (n <= 0)
-	{
-		_putchar('\n');
-	}
-	else
-	{
-		for (slash = 0; slash < n; slash++)
-		{
-			for (space = 0; space < slash; space++)
-			{
-				_putchar(' ');
-			}
-			_putchar('\\');
-			_putchar('\n');
-		}
-	}
+int i, j;
+if (n <= 0)
+{
+putchar('\n');
+}
+else
+{
+for (i = 0; i < n; i++)
+{
+for (j = 0; j < i; j++)
+{
+putchar(' ');
+}
+putchar('\\');
+putchar('\n');
+}
+}
 }
