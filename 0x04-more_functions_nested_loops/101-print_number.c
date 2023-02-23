@@ -1,19 +1,38 @@
 #include "main.h"
 
 /**
- * main - check code
- * Return: Always 0
+ * print_number - function declaration
+ * @n: the integer
+ * Description: prints the arguement n
+ * Return: void
  */
-int main(void)
+
+void print_number(int n);
+
+/**
+ * print_number - function definition
+ * @n: the integer to print
+ * Description: prints integer n
+ * Return: void
+ */
+
+void print_number(int n)
 {
-	print_number(98);
-	_putchar('\n');
-	print_number(402);
-	_putchar('\n');
-	print_number(1024);
-	_putchar('\n');
-	print_number(0);
-	print_number(-98);
-	_putchar('\n');
-	return (0);
+	unsigned int number;
+
+	if (n < 0)
+	{
+		number = -n;
+		_putchar('-');
+	}
+	else
+	{
+		number = n;
+	}
+
+	if (number / 10)
+	{
+		print_number(number / 10);
+	}
+	_putchar((number % 10) + '0');
 }
