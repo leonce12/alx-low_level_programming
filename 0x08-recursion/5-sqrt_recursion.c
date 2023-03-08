@@ -1,32 +1,34 @@
 #include "main.h"
-/**
-* is_prime_number - returns true if the number is prime
-*@n: the number to check
-*
-*Return: true if the number is prime
-*/
-int is_prime_number(int n)
-{
-	int start = n / 2;
-
-	if (n <= 1)
-		return (0);
-	return (is_prime(n, start));
-}
 
 /**
-* is_prime - returns the 1 if n is prime
-* @n: number to be checked
-* @start: number to start checking from
-*
-* Return: 1 if n is prime, 0 otherwise
-*/
+ * _pow_recursion - function declaration
+ * @x: integer to power
+ * @y: power integer
+ * Return: integer value
+ */
 
-int is_prime(int n, int start)
+int _pow_recursion(int x, int y);
+
+/**
+ * _pow_recursion - function definition
+ * @x: the integer to power
+ * @y: the power to raise to
+ * Description: raise x to power y
+ * Return: an integer value
+ */
+
+int _pow_recursion(int x, int y)
 {
-	if (start <= 1)
+	if (y < 0)
+	{
+		return (-1);
+	}
+	else if (y > 0)
+	{
+		return (x * _pow_recursion(x, y - 1));
+	}
+	else
+	{
 		return (1);
-	else if (n % start == 0)
-		return (0);
-	return (is_prime(n, start - 1));
+	}
 }
